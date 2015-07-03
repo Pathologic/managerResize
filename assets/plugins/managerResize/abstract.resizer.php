@@ -62,6 +62,7 @@ abstract class Resizer {
         }
         header("Content-type: ".$info['mime']);
         header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime($file)) . ' GMT');
+        ob_clean();
         readfile($file);
     }
 } 
